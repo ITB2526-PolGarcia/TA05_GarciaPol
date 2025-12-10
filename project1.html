@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[DESCRIPCIÓ CURTA DE LA PÀGINA ESPECÍFICA]">
+    <meta name="description" content="Detalls del Projecte 1: E-commerce amb disseny responsive i desenvolupament frontend.">
     <meta name="author" content="Pol García López">
-    <title>Portfoli Personal - [NOM DE LA PÀGINA]</title>
+    <title>Portfoli Personal - Projecte 1: E-commerce</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -22,15 +22,66 @@
         <nav class="menu">
             <ul>
                 <li><a href="index.html">Inici</a></li>
-                <li><a href="list.html">Projectes</a></li>
+                <li><a href="list.html" class="active">Projectes</a></li>
                 <li><a href="form.html">Contacte</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <article id="project-detail">
 
-        </main>
+            <section class="project-header">
+                <h1>Projecte 1: E-commerce Responsive</h1>
+
+                <div class="main-image-container">
+                    <img src="img/projecte1_main.jpg" alt="Vista principal del projecte E-commerce" class="main-project-image">
+                </div>
+            </section>
+
+            <section class="project-intro-details">
+                <div class="intro-text">
+                    <h2>Introducció</h2>
+                    <p>Aquest projecte ha consistit en el desenvolupament *frontend* complet d'una botiga en línia, prioritzant l'experiència d'usuari a tots els dispositius. El disseny és totalment adaptatiu (Mobile-First) per garantir un rendiment òptim en mòbils, tauletes i escriptori.</p>
+                </div>
+
+                <div class="details-box">
+                    <h3>Detalls Clau</h3>
+                    <ul>
+                        <li>**Client:** Prova Fictícia S.L.</li>
+                        <li>**Data:** Q4 2023</li>
+                        <li>**Tecnologies:** HTML5, CSS3 (Flexbox/Grid), JavaScript ES6.</li>
+                        <li>**Tipus:** Desenvolupament Frontend i Disseny UX/UI.</li>
+                    </ul>
+                    <a href="URL_DEMO_PROJECTE1" target="_blank" class="button project-link">Veure Projecte en Viu</a>
+                </div>
+            </section>
+
+            <section class="project-description">
+                <h2>El Repte i la Solució</h2>
+                <p>El principal repte era crear un disseny complex que fos usable i atractiu independentment de la mida de la pantalla. La solució va passar per utilitzar CSS Grid per a la disposició principal del producte i carregar imatges amb optimització de mida mitjançant *srcset* per millorar la velocitat de càrrega. També es va implementar una lògica bàsica de carretó de la compra amb JavaScript pur.</p>
+
+                <p>Aquesta secció contindria més paràgrafs detallant processos, decisions de disseny i resultats obtinguts.</p>
+            </section>
+
+            <section class="project-gallery">
+                <h2>Exemples Visuals</h2>
+
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="img/projecte1_screen1.jpg" alt="Vista del carretó de la compra" loading="lazy">
+                        <p>Vista de la pàgina de Producte en mode mòbil.</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/projecte1_screen2.jpg" alt="Vista de la pàgina de llistat de productes" loading="lazy">
+                        <p>Disseny del *header* adaptatiu i menú.</p>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+    </main>
 
     <footer>
         <div class="footer-content">
@@ -61,9 +112,7 @@
     </footer>
 
     <script>
-        // Funció per actualitzar l'any automàticament
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>

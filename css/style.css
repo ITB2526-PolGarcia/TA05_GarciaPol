@@ -54,10 +54,8 @@ header {
 
 /* 1. Logo enganxat a l'esquerra (gràcies a Flexbox) */
 header .logo {
-    /* Assegura que el logo no tingui cap marge que l'allunyi */
     margin-right: 0;
     padding-left: 0;
-    /* Evita que el logo es faci petit en pantalles petites */
     flex-shrink: 0;
 }
 
@@ -70,10 +68,10 @@ header .logo {
 
 /* 3. Eliminació de vinyetes i alineació horitzontal del menú */
 header nav ul {
-    list-style: none; /* ELIMINA LES VINYETES */
+    list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Posa els elements en línia */
+    display: flex;
 }
 
 /* CORRECCIÓ: Espaiat del menú afegit en l'última revisió */
@@ -121,20 +119,20 @@ main {
 
 /* AJUST DE LA IMATGE DE PERFIL PER NO DESBORDAR LA PÀGINA */
 #introduccio .perfil-imatge {
-    flex: 0 0 300px; /* Assegura que l'espai per a la imatge és de 300px */
-    max-width: 300px; /* Limita l'amplada màxima del contenidor */
+    flex: 0 0 300px;
+    max-width: 300px;
     text-align: center;
 }
 
 #introduccio .perfil-imatge img {
-    width: 100%; /* La imatge ocupa el 100% de l'amplada del seu contenidor (300px) */
+    width: 100%;
     height: auto;
-    max-width: 100%; /* Mantenir-la dins dels límits del pare */
+    max-width: 100%;
 
-    border-radius: 50%; /* La fa rodona */
-    aspect-ratio: 1 / 1; /* Assegura que sigui un cercle perfecte */
-    object-fit: cover; /* Retalla si és necessari per omplir el cercle */
-    border: 6px solid var(--secondary-light); /* Vora estètica */
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 6px solid var(--secondary-light);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -142,7 +140,10 @@ main {
 /* Estils del botó (CTA Principal i Projectes) */
 /* ------------------------------------------- */
 
-a.button, a.project-link {
+/* CORRECCIÓ: S'ha afegit .contact-form button[type="submit"] a l'estil de botó */
+a.button,
+a.project-link,
+.contact-form button[type="submit"] {
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--accent-color);
@@ -154,10 +155,16 @@ a.button, a.project-link {
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
+    /* NOU: Assegurem que el botó d'enviament no tingui vores per defecte */
+    border: none;
+    cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-a.button:hover, a.project-link:hover {
+/* CORRECCIÓ: S'ha afegit .contact-form button[type="submit"]:hover */
+a.button:hover,
+a.project-link:hover,
+.contact-form button[type="submit"]:hover {
     background-color: #c0392b;
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
@@ -168,18 +175,14 @@ a.button:hover, a.project-link:hover {
 /* ------------------------------------------- */
 
 #projectes-destacats {
-    /* CONTENIDOR: Usa flex per posar els 2 projectes al costat */
     display: flex;
-    /* CORRECCIÓ CLAU: Permet que els elements saltin de línia */
     flex-wrap: wrap;
-    gap: var(--spacing-md); /* Espai entre els dos projectes */
+    gap: var(--spacing-md);
     margin-top: calc(var(--spacing-lg) * 2);
-    margin-bottom: calc(var(--spacing-lg) * 2); /* Espai inferior */
+    margin-bottom: calc(var(--spacing-lg) * 2);
 }
 
 #projectes-destacats h2 {
-    /* Títol general de la secció: Ha d'estar fora del contenidor flex per centrar-se correctament */
-    /* flex-basis: 100% ja força el salt de línia */
     flex-basis: 100%;
     text-align: center;
     margin-bottom: var(--spacing-lg);
@@ -188,13 +191,13 @@ a.button:hover, a.project-link:hover {
 
 /* Targeta de Projecte (El "quadrat") */
 #projectes-destacats .projecte {
-    flex: 1; /* Fa que cada projecte ocupi la mateixa amplada (50% cadascun) */
-    background-color: var(--card-background); /* Fons GRIS FOSC ELEGANT */
+    flex: 1;
+    background-color: var(--card-background);
     padding: var(--spacing-md);
     border-radius: 12px;
     border: 1px solid var(--secondary-light);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-align: center; /* Centrem el contingut de la targeta */
+    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -218,7 +221,6 @@ a.button:hover, a.project-link:hover {
 /* ------------------------------------------- */
 
 footer {
-    /* Fons fosc consistent */
     background-color: var(--primary-dark);
     color: var(--text-light);
     padding: var(--spacing-lg) 5%;
@@ -227,11 +229,10 @@ footer {
 }
 
 .footer-content {
-    /* CORRECCIÓ: Permet que el copyright salti de línia. */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Manté les Xarxes i el Menú separats */
-    align-items: flex-start; /* Alineació vertical a la part superior */
+    justify-content: space-between;
+    align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -239,16 +240,16 @@ footer {
 /* NOU ESTIL PER A GRUP D'ICONES */
 .footer-content .icon-group {
     display: flex;
-    gap: 15px; /* Espai entre les icones */
+    gap: 15px;
     margin-top: 10px;
 }
 
 /* 1. CENTRATGE DEL COPYRIGHT (Força una nova línia i centra el text) */
 .copyright {
-    flex-basis: 100%; /* Ocupa tota l'amplada de la línia */
+    flex-basis: 100%;
     text-align: center;
     padding-top: var(--spacing-md);
-    border-top: 1px solid var(--secondary-light); /* Línia de separació elegant */
+    border-top: 1px solid var(--secondary-light);
     margin-top: var(--spacing-md);
 }
 
@@ -261,20 +262,402 @@ footer {
     list-style: none;
     padding: 0;
     margin: 0;
-    /* CORRECCIÓ CLAU: Canviem a columna (vertical) */
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Reduïm l'espai entre els ítems verticals */
+    gap: 5px;
 }
 
 /* Estil general dels enllaços del footer */
 footer a {
-    color: var(--text-light); /* Les icones seran text-light per defecte */
+    color: var(--text-light);
     text-decoration: none;
     transition: color 0.3s, transform 0.1s;
 }
 
 footer a:hover {
     color: var(--accent-color);
-    transform: translateY(-2px); /* Petit efecte a l'aixecar-se */
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------------- */
+/* Pàgina de Contacte (Formulari) - ESTILS AFEGITS */
+/* ------------------------------------------- */
+
+/* Títol principal de la secció de contacte */
+#contact-section .section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-light);
+}
+
+/* Contenidor Flex: divideix la pàgina en dues columnes (Info + Form) */
+.contact-container {
+    display: flex;
+    gap: 50px; /* Espai entre la columna esquerra i la dreta */
+    align-items: stretch; /* Les columnes tindran la mateixa alçada */
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--card-background); /* Fons fosc elegant */
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Columna Esquerra: Informació de Contacte */
+.contact-info {
+    flex: 1; /* Ocupa una porció de l'espai */
+    padding: var(--spacing-md);
+    border-right: 1px solid var(--secondary-light); /* Línia de separació vertical */
+}
+
+.contact-info h3 {
+    color: var(--accent-color); /* Títols d'informació en color d'èmfasi */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+}
+
+/* Estil per al grup d'icones grans d'informació */
+.info-social-links h4 {
+    margin-top: var(--spacing-md);
+    color: var(--text-light);
+}
+
+.info-social-links .icon-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.info-social-links a i {
+    color: var(--text-light); /* Color per defecte de les icones */
+    transition: color 0.3s, transform 0.1s;
+}
+
+.info-social-links a:hover i {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Estil pel contenidor del mapa incrustat */
+.contact-info .location-map {
+    margin-top: 25px;
+}
+
+.contact-info .location-map h4 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+/* Columna Dreta: Formulari */
+.contact-form {
+    flex: 2; /* Ocupa el doble d'espai que la columna esquerra */
+    padding: var(--spacing-md);
+}
+
+/* Estil dels grups d'inputs */
+.contact-form .form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Estil dels inputs i textarea (Foscos i amb vores) */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--secondary-light);
+    border-radius: 8px;
+    background-color: var(--primary-dark); /* Fons dels camps d'entrada més fosc */
+    color: var(--text-light);
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color); /* Vora vermella en enfocar */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.4);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permet només redimensionar verticalment */
+}
+
+/* Estil del missatge final de confirmació/gràcies */
+.final-message {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-style: italic;
+    color: #999;
+}
+
+/* Amaga el text de la label, ja que usem placeholder (accessibilitat) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+/* ------------------------------------------- */
+/* Pàgina de Detall de Projecte (projectX.html) */
+/* ------------------------------------------- */
+
+/* Contenidor principal del detall del projecte */
+#project-detail {
+    margin-top: 0; /* Utilitzem el padding del main */
+}
+
+/* 1. Capçalera del Projecte (Títol + Imatge Principal) */
+.project-header h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-color); /* Títol en color d'èmfasi */
+}
+
+/* Contenidor de la imatge principal */
+.main-image-container {
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    /* MILLORA: Ombra amb un subtil "Soft Glow" */
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.15), 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframes per animació d'aparició (opcional, però dóna un toc fluid) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Bords arrodonits per a la imatge */
+    /* MILLORA: Afegim transició per a l'efecte hover */
+    transition: transform 0.3s ease-in-out;
+    /* Aplicació de l'animació */
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* MILLORA: Lleuger zoom o elevació en fer hover sobre la imatge principal */
+.main-project-image:hover {
+    transform: scale(1.005);
+}
+
+/* 2. Introducció i Detalls Tècnics (Disposició en dues columnes) */
+.project-intro-details {
+    display: flex;
+    gap: 50px;
+    margin-bottom: calc(var(--spacing-lg) * 1.5);
+    padding: var(--spacing-lg);
+    background-color: var(--card-background); /* Fons fosc per a la secció */
+    border-radius: 12px;
+    /* MILLORA: Ombra amb un subtil "Soft Glow" */
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.1), 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-intro-details h2 {
+    color: var(--accent-color);
+    font-size: 2em;
+    margin-top: 0;
+}
+
+/* Columna Esquerra: Text Introductori */
+.intro-text {
+    flex: 2; /* Ocupa 2/3 de l'espai */
+}
+
+/* Columna Dreta: Detalls Tècnics */
+.details-box {
+    flex: 1; /* Ocupa 1/3 de l'espai */
+    background-color: var(--primary-dark); /* Fons encara més fosc */
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--secondary-light);
+}
+
+.details-box h3 {
+    color: var(--text-light);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.details-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.details-box ul li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.details-box ul li strong {
+    color: var(--accent-color);
+}
+
+/* 3. Descripció en Profunditat */
+.project-description {
+    margin-bottom: calc(var(--spacing-lg) * 1.5);
+}
+
+.project-description h2 {
+    color: var(--text-light);
+    /* MILLORA: Separador amb gradient subtil */
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right, var(--accent-color), var(--secondary-light), transparent) 1;
+    padding-bottom: 10px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* 4. Galeria d'Imatges (Dos Images - Esborrany) */
+.project-gallery h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.gallery-container {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: space-between;
+}
+
+.gallery-item {
+    flex: 1;
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    /* MILLORA: Ombra amb un subtil "Soft Glow" */
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.08), 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+/* MILLORA: Elevació subtil en hover a la galeria */
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.gallery-item p {
+    font-style: italic;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* Ajust per al botó que ja té l'estil general .button/.project-link */
+.details-box .button {
+    margin-top: var(--spacing-md);
+    width: 100%;
+}
+
+
+/* ------------------------------------------- */
+/* Pàgina de Llista de Projectes (list.html) - ESTILS AFEGITS */
+/* ------------------------------------------- */
+
+/* Títol de la secció de llista de projectes */
+#project-list-section .section-title {
+    text-align: center;
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #999;
+    font-size: 1.1em;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Contenidor Grid: Disposició en columnes (per defecte 2 columnes, adaptatiu) */
+.project-grid {
+    display: grid;
+    /* Crea automàticament columnes d'un mínim de 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-md);
+}
+
+/* Estil de cada targeta de projecte */
+.project-card {
+    background-color: var(--card-background);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    border: 1px solid var(--secondary-light);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Ombra subtil per aixecar la targeta */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Organització vertical */
+}
+
+/* Efecte d'elevació i ombra en fer hover */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(231, 76, 60, 0.2);
+}
+
+.project-card .card-title {
+    color: var(--text-light);
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-card .card-image-container {
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Alçada fixa per uniformitzar les targetes */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+/* Efecte zoom a la imatge quan es fa hover a la targeta */
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card .card-description {
+    font-size: 0.95em;
+    color: var(--text-light);
+    flex-grow: 1; /* Permet que la descripció ocupi l'espai restant */
+    margin-bottom: var(--spacing-md);
+}
+
+/* Ajust del botó dins de la targeta */
+.project-card .card-link {
+    margin-top: auto; /* Força el botó a la part inferior, alineant-lo amb altres targetes */
 }

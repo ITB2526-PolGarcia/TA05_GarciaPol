@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[DESCRIPCIÓ CURTA DE LA PÀGINA ESPECÍFICA]">
+    <meta name="description" content="Pàgina de contacte professional de Pol García López.">
     <meta name="author" content="Pol García López">
-    <title>Portfoli Personal - [NOM DE LA PÀGINA]</title>
+    <title>Portfoli Personal - Contacte</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -23,14 +23,85 @@
             <ul>
                 <li><a href="index.html">Inici</a></li>
                 <li><a href="list.html">Projectes</a></li>
-                <li><a href="form.html">Contacte</a></li>
+                <li><a href="form.html" class="active">Contacte</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section id="contact-section">
+            <h2 class="section-title">Tens alguna pregunta?</h2>
 
-        </main>
+            <div class="contact-container">
+
+                <aside class="contact-info">
+                    <h3>On trobar-me</h3>
+                    <p><strong>📍 Localització:</strong> Barcelona, Catalunya</p>
+
+                    <h3>Contacta</h3>
+                    <p><strong>📧 Correu:</strong> info@polgarcia.dev</p>
+                    <p><strong>📞 Telèfon:</strong> +34 600 XXX XXX</p>
+
+                    <div class="info-social-links">
+                        <h4>Segueix-me</h4>
+                        <div class="icon-group">
+                            <a href="URL_DEL_TEU_LINKEDIN" target="_blank" aria-label="Perfil de LinkedIn">
+                                <i class="fab fa-linkedin fa-3x"></i> </a>
+                            <a href="URL_DEL_TEU_GITHUB" target="_blank" aria-label="Perfil de GitHub">
+                                <i class="fab fa-github-square fa-3x"></i> </a>
+                        </div>
+                    </div>
+
+                    <div class="location-map">
+                        <h4 style="margin-top: 20px;">Ubicació Geogràfica</h4>
+                        <iframe
+                            src="https://maps.google.com/maps?width=100%25&height=300&hl=ca&q=Barcelona&t=&z=12&ie=UTF8&iwloc=B&output=embed"
+                            width="100%"
+                            height="300"
+                            style="border:0; border-radius: 8px; filter: grayscale(80%) invert(95%) hue-rotate(180deg);"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa de Barcelona"
+                        ></iframe>
+                    </div>
+                </aside>
+
+                <article class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Nom</label>
+                            <input type="text" id="name" name="name" placeholder="El teu nom" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Correu electrònic</label>
+                            <input type="email" id="email" name="email" placeholder="Adreça de correu electrònic" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="sr-only">Número de telèfon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Número de telèfon (Opcional)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="sr-only">Assumpte</label>
+                            <input type="text" id="subject" name="subject" placeholder="Assumpte" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Missatge</label>
+                            <textarea id="message" name="message" rows="6" placeholder="El teu missatge..." required></textarea>
+                        </div>
+
+                        <button type="submit">Enviar Missatge</button>
+                    </form>
+                </article>
+            </div>
+
+            <p class="final-message">Et respondré tan aviat com sigui possible. Gràcies per contactar! :)</p>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
@@ -50,7 +121,7 @@
                 <ul>
                     <li><a href="index.html">Inici</a></li>
                     <li><a href="list.html">Projectes</a></li>
-                    <li><a href="form.html">Contacte</a></li>
+                    <li><a href="form.html" class="active">Contacte</a></li>
                 </ul>
             </nav>
 
@@ -61,9 +132,7 @@
     </footer>
 
     <script>
-        // Funció per actualitzar l'any automàticament
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>

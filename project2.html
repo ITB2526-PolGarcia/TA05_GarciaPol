@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[DESCRIPCIÓ CURTA DE LA PÀGINA ESPECÍFICA]">
+    <meta name="description" content="Detalls del Projecte 2: Aplicació web de gestió d'inventari amb tecnologies modernes de backend i frontend.">
     <meta name="author" content="Pol García López">
-    <title>Portfoli Personal - [NOM DE LA PÀGINA]</title>
+    <title>Portfoli Personal - Projecte 2: App Inventari</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -22,15 +22,66 @@
         <nav class="menu">
             <ul>
                 <li><a href="index.html">Inici</a></li>
-                <li><a href="list.html">Projectes</a></li>
+                <li><a href="list.html" class="active">Projectes</a></li>
                 <li><a href="form.html">Contacte</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <article id="project-detail">
 
-        </main>
+            <section class="project-header">
+                <h1>Projecte 2: Sistema de Gestió d'Inventari (SGI)</h1>
+
+                <div class="main-image-container">
+                    <img src="img/projecte2_main.jpg" alt="Vista del dashboard del sistema de gestió d'inventari" class="main-project-image">
+                </div>
+            </section>
+
+            <section class="project-intro-details">
+                <div class="intro-text">
+                    <h2>Introducció</h2>
+                    <p>Aplicació web dissenyada per optimitzar la traçabilitat i l'administració d'estoc en temps real per a petites i mitjanes empreses (PIMEs). L'objectiu era substituir un sistema basat en fulls de càlcul per una interfície ràpida i intuïtiva.</p>
+                </div>
+
+                <div class="details-box">
+                    <h3>Detalls Clau</h3>
+                    <ul>
+                        <li>**Client:** Empresa Fictícia de Logística</li>
+                        <li>**Data:** Q1 2024</li>
+                        <li>**Tecnologies:** PHP (Laravel), Vue.js, MySQL, REST API.</li>
+                        <li>**Tipus:** Full-Stack Development (Frontend & Backend).</li>
+                    </ul>
+                    <a href="URL_DEMO_PROJECTE2_GITHUB" target="_blank" class="button project-link">Veure Repositori (GitHub)</a>
+                </div>
+            </section>
+
+            <section class="project-description">
+                <h2>El Repte i la Solució</h2>
+                <p>El major desafiament va ser manejar una gran quantitat de dades d'inventari i garantir que les actualitzacions fossin instantànies per evitar discrepàncies d'estoc. Es va utilitzar Vue.js per crear una Single Page Application (SPA), aconseguint una experiència d'usuari molt fluida i reactiva. El backend, construït amb Laravel, ofereix una API robusta i segura.</p>
+
+                <p>Es van implementar filtres avançats, informes en temps real i un sistema d'alertes personalitzable per a estocs baixos. El sistema ha millorat l'eficiència operativa del client en un 30%.</p>
+            </section>
+
+            <section class="project-gallery">
+                <h2>Exemples de l'Aplicació</h2>
+
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="img/projecte2_screen1.jpg" alt="Vista de la taula de productes amb filtres" loading="lazy">
+                        <p>Taula de gestió de productes amb funcions d'edició ràpida.</p>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="img/projecte2_screen2.jpg" alt="Vista del formulari d'entrada de nous articles" loading="lazy">
+                        <p>Formulari d'entrada de nou producte i validació.</p>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+    </main>
 
     <footer>
         <div class="footer-content">
@@ -61,9 +112,7 @@
     </footer>
 
     <script>
-        // Funció per actualitzar l'any automàticament
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
