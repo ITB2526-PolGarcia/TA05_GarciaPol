@@ -1,0 +1,137 @@
+/* ============================================================== */
+/* VARIABLES I BASE DE DISSENY (MODE FOSC PREMIUM) */
+/* ============================================================== */
+
+:root {
+    --primary-dark: #2c2c2c;      /* Fons de Header/Footer (Fosc) */
+    --accent-color: #e74c3c;      /* Vermell-Taronja subtil per a èmfasi */
+    --secondary-light: #444444;   /* Separació */
+    --background-color: #1a1a1a;  /* Fons principal MÉS FOSC (la base) */
+    --text-light: #e0e0e0;        /* Text principal CLAR */
+    --card-background: #2c2c2c;   /* Fons de les targetes (GRIS FOSC, ELEGANT) */
+    --spacing-lg: 2.5rem;
+    --spacing-md: 1.5rem;
+}
+
+/* ------------------------------------------- */
+/* Estils Generals, Tipografia i Reseteig */
+/* ------------------------------------------- */
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-light);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: var(--text-light);
+    line-height: 1.1;
+    margin-top: var(--spacing-md);
+    margin-bottom: calc(var(--spacing-md) * 0.75);
+    font-weight: 700;
+}
+
+/* ------------------------------------------- */
+/* Capçalera (<header>) - Solució Alignament i Vinyetes */
+/* ------------------------------------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 5%;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    border-bottom: 3px solid var(--secondary-light);
+}
+
+/* 1. Logo enganxat a l'esquerra (gràcies a Flexbox) */
+header .logo {
+    /* Assegura que el logo no tingui cap marge que l'allunyi */
+    margin-right: 0;
+    padding-left: 0;
+    /* Evita que el logo es faci petit en pantalles petites */
+    flex-shrink: 0;
+}
+
+/* Estil de la imatge del logo */
+.site-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* 3. Eliminació de vinyetes i alineació horitzontal del menú */
+header nav ul {
+    list-style: none; /* ELIMINA LES VINYETES */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Posa els elements en línia */
+}
+
+/* CORRECCIÓ: Espaiat del menú afegit en l'última revisió */
+header nav ul li {
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+/* ------------------------------------------- */
+/* Contingut Principal (<main>) */
+/* ------------------------------------------- */
+
+/* Targeta: Introducció (Fons GRIS FOSC ELEGANT) */
+#introduccio {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: calc(var(--spacing-lg) * 2);
+    padding: var(--spacing-lg);
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* AJUST DE LA IMATGE DE PERFIL PER NO DESBORDAR LA PÀGINA */
+#introduccio .perfil-imatge {
+    flex: 0 0 300px; /* Assegura que l'espai per a la imatge és de 300px */
+    max-width: 300px; /* Limita l'amplada màxima del contenidor */
+    text-align: center;
+}
+
+#introduccio .perfil-imatge img {
+    width: 100%; /* La imatge ocupa el 100% de l'amplada del seu contenidor (300px) */
+    height: auto;
+    max-width: 100%; /* Mantenir-la dins dels límits del pare */
+
+    border-radius: 50%; /* La fa rodona */
+    aspect-ratio: 1 / 1; /* Assegura que sigui un cercle perfecte */
+    object-fit: cover; /* Retalla si és necessari per omplir el cercle */
+    border: 6px solid var(--secondary-light); /* Vora estètica */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------------------------- */
+/* Secció de Projectes Destacats */
+/* ------------------------------------------- */
+
+#projectes-destacats {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: calc(var(--spacing-lg) * 2);
+}
+/* ... (La resta dels estils de projectes es mantenen igual) ... */
+
+
+/* ------------------------------------------- */
+/* Peu de Pàgina (<footer>) - Vinyetes també eliminades aquí */
+/* ------------------------------------------- */
+
+footer {
+    background-
