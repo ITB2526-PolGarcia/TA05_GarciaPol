@@ -8,6 +8,7 @@
     <title>Portfoli Personal - Inici</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -44,29 +45,61 @@
 
         <section id="projectes-destacats">
 
-    <h2>Projectes Destacats</h2>
+            <h2>Projectes Destacats</h2>
 
-    <article class="projecte">
-        <h3 class="projecte-titol">Security Onion</h3>
+            <article class="projecte">
+                <h3 class="projecte-titol">Security Onion</h3>
 
-        <img src="img/proyecto1.png">
+                <img src="img/proyecto1.png">
 
-        <p>Desenvolupament *frontend* complet d'una botiga en línia amb disseny totalment adaptatiu (Mobile-First).</p>
+                <p>Desenvolupament *frontend* complet d'una botiga en línia amb disseny totalment adaptatiu (Mobile-First).</p>
 
-        <a href="project1.html" class="button project-link">Veure Detall</a>
-    </article>
+                <a href="project1.html" class="button project-link">Veure Detall</a>
+            </article>
 
-    <article class="projecte">
-        <h3 class="projecte-titol">App de Gestió de Tasques</h3>
+            <article class="projecte">
+                <h3 class="projecte-titol">App de Gestió de Tasques</h3>
 
-        <img src="img/proyecto2.png">
+                <img src="img/proyecto2.png">
 
-        <p>Aplicació web interactiva construïda amb Javascript pur per a la gestió eficient de tasques diàries.</p>
+                <p>Aplicació web interactiva construïda amb Javascript pur per a la gestió eficient de tasques diàries.</p>
 
-        <a href="project2.html" class="button project-link">Veure Detall</a>
-    </article>
+                <a href="project2.html" class="button project-link">Veure Detall</a>
+            </article>
         </section>
-        </main>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <h4>Xarxes Socials</h4>
+                <div class="icon-group">
+                    <a href="URL_DEL_TEU_LINKEDIN" target="_blank" aria-label="Perfil de LinkedIn">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/ITB2526-PolGarcia" target="_blank" aria-label="Perfil de GitHub">
+                        <i class="fab fa-github-square fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="footer-menu">
+                <ul>
+                    <li><a href="index.html">Inici</a></li>
+                    <li><a href="list.html">Projectes</a></li>
+                    <li><a href="form.html">Contacte</a></li>
+                </ul>
+            </nav>
+
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Pol García López. Tots els drets reservats.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Funció per actualitzar l'any automàticament
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 
     </body>
 </html>

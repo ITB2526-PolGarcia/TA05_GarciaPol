@@ -208,4 +208,73 @@ a.button:hover, a.project-link:hover {
 #projectes-destacats .projecte img {
     width: 100%;
     max-height: 220px;
-    object-fit: cover
+    object-fit: cover;
+    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+}
+
+/* ------------------------------------------- */
+/* Peu de Pàgina (<footer>) - CORRECCIONS APLICADES */
+/* ------------------------------------------- */
+
+footer {
+    /* Fons fosc consistent */
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    padding: var(--spacing-lg) 5%;
+    margin-top: calc(var(--spacing-lg) * 2);
+    font-size: 0.95em;
+}
+
+.footer-content {
+    /* CORRECCIÓ: Permet que el copyright salti de línia. */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Manté les Xarxes i el Menú separats */
+    align-items: flex-start; /* Alineació vertical a la part superior */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NOU ESTIL PER A GRUP D'ICONES */
+.footer-content .icon-group {
+    display: flex;
+    gap: 15px; /* Espai entre les icones */
+    margin-top: 10px;
+}
+
+/* 1. CENTRATGE DEL COPYRIGHT (Força una nova línia i centra el text) */
+.copyright {
+    flex-basis: 100%; /* Ocupa tota l'amplada de la línia */
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--secondary-light); /* Línia de separació elegant */
+    margin-top: var(--spacing-md);
+}
+
+/* 2. ALINEACIÓ VERTICAL DEL MENÚ (A la dreta) */
+.footer-menu {
+    align-self: flex-start;
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* CORRECCIÓ CLAU: Canviem a columna (vertical) */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Reduïm l'espai entre els ítems verticals */
+}
+
+/* Estil general dels enllaços del footer */
+footer a {
+    color: var(--text-light); /* Les icones seran text-light per defecte */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.1s;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px); /* Petit efecte a l'aixecar-se */
+}
