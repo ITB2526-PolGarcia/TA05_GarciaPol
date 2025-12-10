@@ -82,9 +82,30 @@ header nav ul li {
     flex-shrink: 0;
 }
 
+/* Estils dels enllaços del Header */
+header nav ul li a {
+    color: var(--text-light);
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: var(--accent-color);
+    color: var(--card-background);
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+}
+
 /* ------------------------------------------- */
 /* Contingut Principal (<main>) */
 /* ------------------------------------------- */
+main {
+    max-width: 1200px;
+    margin: var(--spacing-lg) auto;
+    padding: 0 5%;
+}
 
 /* Targeta: Introducció (Fons GRIS FOSC ELEGANT) */
 #introduccio {
@@ -118,20 +139,73 @@ header nav ul li {
 }
 
 /* ------------------------------------------- */
-/* Secció de Projectes Destacats */
+/* Estils del botó (CTA Principal i Projectes) */
+/* ------------------------------------------- */
+
+a.button, a.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50px;
+    margin-top: var(--spacing-md);
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+a.button:hover, a.project-link:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
+}
+
+/* ------------------------------------------- */
+/* Secció de Projectes Destacats (Targetes FOSQUES) */
 /* ------------------------------------------- */
 
 #projectes-destacats {
+    /* CONTENIDOR: Usa flex per posar els 2 projectes al costat */
     display: flex;
-    gap: var(--spacing-md);
+    /* CORRECCIÓ CLAU: Permet que els elements saltin de línia */
+    flex-wrap: wrap;
+    gap: var(--spacing-md); /* Espai entre els dos projectes */
     margin-top: calc(var(--spacing-lg) * 2);
+    margin-bottom: calc(var(--spacing-lg) * 2); /* Espai inferior */
 }
-/* ... (La resta dels estils de projectes es mantenen igual) ... */
 
+#projectes-destacats h2 {
+    /* Títol general de la secció: Ha d'estar fora del contenidor flex per centrar-se correctament */
+    /* flex-basis: 100% ja força el salt de línia */
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2.2em;
+}
 
-/* ------------------------------------------- */
-/* Peu de Pàgina (<footer>) - Vinyetes també eliminades aquí */
-/* ------------------------------------------- */
+/* Targeta de Projecte (El "quadrat") */
+#projectes-destacats .projecte {
+    flex: 1; /* Fa que cada projecte ocupi la mateixa amplada (50% cadascun) */
+    background-color: var(--card-background); /* Fons GRIS FOSC ELEGANT */
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    border: 1px solid var(--secondary-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Centrem el contingut de la targeta */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-footer {
-    background-
+/* Efecte d'elevació en fer hover */
+#projectes-destacats .projecte:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Imatge miniatura dins la targeta */
+#projectes-destacats .projecte img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover
