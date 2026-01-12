@@ -687,92 +687,97 @@ footer a:hover {
 
 
 /* ============================================================== */
-/* PROTECCIÓN GLOBAL Y RESPONSIVE DEFINITIVO                      */
+/* SOLUCIÓN DEFINITIVA PARA MÓVIL (Sustituye todo lo anterior)    */
 /* ============================================================== */
 
-/* 1. Bloqueo de desplazamiento lateral */
+/* 1. Bloqueo total de desbordamiento */
 html, body {
-    max-width: 100%;
     overflow-x: hidden;
+    width: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* 2. Asegurar que Main no tenga márgenes que sumen ancho */
+main {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
 }
 
-/* 2. AJUSTE PARA TABLETS (Pantallas medianas) */
-@media (max-width: 1024px) {
-    #introduccio {
-        gap: 20px;
-        padding: var(--spacing-md);
+/* 3. REGLAS PARA MÓVIL (iPhone, Redmi, etc. < 768px) */
+@media (max-width: 768px) {
+
+    /* Reset de Flexbox para evitar que se mantengan en fila */
+    header,
+    #introduccio,
+    .contact-container,
+    .project-intro-details,
+    .gallery-container,
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important; /* Reducimos el espacio exagerado de 50px */
     }
+
+    /* Imagen de perfil: El principal problema */
     #introduccio .perfil-imatge {
-        flex: 0 0 180px;
+        flex: none !important;
+        width: 180px !important; /* Forzamos tamaño pequeño */
+        height: 180px !important;
+        margin: 0 auto !important;
     }
-    .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-/* 3. AJUSTE PARA MÓVIL VERTICAL (iPhone, Redmi, etc. - El más importante) */
-@media (max-width: 480px) {
-
-    /* Forzamos a que nada sea más ancho que la pantalla */
-    main, section, header, footer, .contact-container, #introduccio {
+    #introduccio .introduccio-text {
         width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box;
     }
 
-    /* Menú vertical y centrado */
-    header {
-        flex-direction: column;
-        padding: 15px !important;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-        padding: 0;
-    }
-
-    /* La foto de perfil más pequeña para que no empuje el texto */
-    #introduccio {
-        flex-direction: column !important;
-        padding: 20px !important;
-        gap: 15px !important;
-    }
-
-    #introduccio .perfil-imatge {
-        max-width: 150px !important; /* Más pequeña para vertical */
-        margin: 0 auto;
-    }
-
-    /* Proyectos en una sola columna sin márgenes que sobresalgan */
-    .project-grid {
-        grid-template-columns: 1fr !important;
-        padding: 10px !important;
-    }
-
-    /* Formulario de contacto */
-    .contact-container {
-        flex-direction: column !important;
-        padding: 15px !important;
-    }
-
+    /* Quitar bordes laterales que empujan el contenido */
     .contact-info {
         border-right: none !important;
         border-bottom: 1px solid var(--secondary-light);
-        margin-bottom: 20px;
-        padding-bottom: 20px;
+        padding-right: 0 !important;
+        width: 100% !important;
     }
 
-    /* Evitar que los títulos grandes rompan el ancho */
-    h1 { font-size: 1.6rem !important; overflow-wrap: break-word; }
-    h2 { font-size: 1.3rem !important; }
+    /* Forzar que las tarjetas de proyectos ocupen todo el ancho disponible */
+    .project-grid {
+        display: block !important; /* Cambiamos de Grid a bloque para evitar errores de cálculo */
+    }
+
+    .project-card, .projecte {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Ajuste del Header para que no se amontone */
+    header nav ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav ul li {
+        margin: 0 !important;
+    }
+
+    /* Ajuste de fuentes para evitar que palabras largas corten la pantalla */
+    h1 { font-size: 1.7rem !important; overflow-wrap: break-word; }
+    h2 { font-size: 1.4rem !important; }
+}
+
+/* Ajuste extra para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .project-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    #introduccio {
+        gap: 20px !important;
+    }
 }
