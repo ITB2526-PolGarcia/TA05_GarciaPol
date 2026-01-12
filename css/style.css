@@ -684,85 +684,115 @@ footer a:hover {
 /* Ajust del botó dins de la targeta */
 .project-card .card-link {
     margin-top: auto; /* Força el botó a la part inferior, alineant-lo amb altres targetes */
+
+
 /* ============================================================== */
-/* AJUSTES PARA MÓVILS (PANTALLAS MENORES A 768px)                */
+/* PROTECCIÓN GLOBAL RESPONSIVE                                   */
 /* ============================================================== */
 
-@media (max-width: 768px) {
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Evita que la web se desplace hacia los lados */
+}
 
-    /* 1. Header: Apilamos el logo y el menú */
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
-    header nav ul {
-        flex-direction: column; /* Menú en vertical */
-        gap: 10px;
-    }
+/* ============================================================== */
+/* 1. AJUSTES PARA TABLETS (De 769px a 1024px)                    */
+/* ============================================================== */
 
-    header nav ul li {
-        margin-left: 0; /* Quitamos el margen lateral en móvil */
-    }
-
-    /* 2. Introducción: La imagen arriba y el texto abajo */
+@media (max-width: 1024px) {
     #introduccio {
-        flex-direction: column;
-        text-align: center;
+        gap: 20px;
         padding: var(--spacing-md);
     }
 
     #introduccio .perfil-imatge {
-        flex: 0 0 auto;
-        max-width: 200px; /* Imagen más pequeña en móvil */
-        margin: 0 auto;
+        flex: 0 0 200px;
     }
 
-    /* 3. Formulario de Contacto: De 2 columnas a 1 sola */
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    }
+}
+
+/* ============================================================== */
+/* 2. AJUSTES PARA MÓVIL (iPhone 15, Redmi, etc. - Menos de 768px) */
+/* ============================================================== */
+
+@media (max-width: 768px) {
+
+    /* Header: Logo arriba, menú abajo */
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    header nav ul li {
+        margin: 0;
+        width: 100%;
+    }
+
+    header nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 12px; /* Área de toque más grande para dedos */
+    }
+
+    /* Introducción: Todo en una columna */
+    #introduccio {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    #introduccio .perfil-imatge {
+        max-width: 180px;
+        margin: 0 auto 20px;
+    }
+
+    /* Listado de Proyectos: 1 sola columna */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Formulario de Contacto: Apilado */
     .contact-container {
         flex-direction: column;
+        padding: 15px;
     }
 
     .contact-info {
         border-right: none;
         border-bottom: 1px solid var(--secondary-light);
-        padding-bottom: var(--spacing-md);
-        margin-bottom: var(--spacing-md);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
     }
 
-    /* 4. Detalle de Proyecto: Apilar descripción y caja de detalles */
+    /* Detalles de Proyecto (páginas individuales) */
     .project-intro-details {
         flex-direction: column;
-        gap: 20px;
+        padding: 15px;
     }
 
-    /* 5. Galería: Las imágenes una debajo de otra */
     .gallery-container {
         flex-direction: column;
     }
 
-    /* 6. Títulos más pequeños para que no corten la pantalla */
-    h1 { font-size: 2rem !important; }
-    h2 { font-size: 1.5rem !important; }
-}
-/* ============================================================== */
-/* AJUSTES PARA TABLETS (ENTRE 769px Y 1024px)                    */
-/* ============================================================== */
-
-@media (max-width: 1024px) {
-    /* En tablets, la intro ya empieza a verse apretada, bajamos el tamaño de la imagen */
-    #introduccio {
-        gap: 30px;
-    }
-
-    #introduccio .perfil-imatge {
-        flex: 0 0 200px; /* Reducimos la foto un poco */
-    }
-
-    /* Las tarjetas de proyectos pasarán a ser de 2 en 2 en lugar de 3 */
-    .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* Ajuste de fuentes para que no se corten */
+    h1 { font-size: 1.8rem !important; }
+    h2 { font-size: 1.4rem !important; }
+    .section-title { font-size: 1.6rem !important; }
 }
 }
