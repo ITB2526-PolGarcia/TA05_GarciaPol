@@ -42,26 +42,56 @@
             <section class="project-intro-details">
                 <div class="intro-text">
                     <h2>Introduction</h2>
-                    <p>RESUMEN DEL PROYECTO</p>
+                    <p>Project Overview: "In an era where cyber threats are becoming increasingly sophisticated and stealthy, maintaining comprehensive network visibility is no longer optional—it is a critical requirement for any resilient infrastructure. This project centers on the full-scale deployment and fine-tuning of Security Onion, a premier open-source platform engineered for advanced threat hunting, enterprise security monitoring (ESM), and centralized log management.
+
+As a Cyber Admin, my primary objective was to architect a robust, centralized Security Operations Center (SOC) environment that serves as a 'single pane of glass' for all security telemetry. The core of this implementation was to eliminate organizational blind spots by correlating data from disparate sources. By integrating and optimizing industry-standard engines such as Suricata for signature-based intrusion detection, Zeek for deep protocol analysis, and the Elastic Stack (ELK) for high-speed indexing and data visualization—the project transformed raw network traffic into actionable intelligence.</p>
                 </div>
 
                 <div class="details-box">
                     <h3>Main Details</h3>
                     <ul>
-                        <li>NOMBRE</li>
-                        <li>FECHA</li>
-                        <li>TECNOLOGIAS</li>
-                        <li>HABILIDADES CLAVE</li>
+                        <li><strong>Project Name:</strong> Enterprise Threat Hunting & Monitoring Node</li>
+                        <li><strong>Date:</strong> January 2024 – March 2024</li>
+                        <li><strong>Technologies:</strong> Security Onion, Suricata, Zeek, ELK Stack, Wazuh, Linux</li>
+                        <li><strong>Core Skills:</strong> Network Traffic Analysis (NTA), IDS/IPS Configuration, SIEM Management, Log Correlation</li>
+                        <li><strong>Status:</strong> Completed / Production Ready</li>
                     </ul>
-                    <a href="URL_DEMO_PROJECTE1" target="_blank" class="button project-link">View on GitHub</a>
+                    <a href="https://github.com/Security-Onion-Solutions/securityonion.git" target="_blank" class="button project-link">View on GitHub</a>
                 </div>
             </section>
 
             <section class="project-description">
-                <h2>Problem and solution</h2>
-                <p>EXPLICACIÓN "AMPLIA" DEL PROYECTO</p>
+                <section class="project-description">
+                    <h2>The Challenge (Problem)</h2>
+                    <p>
+                        In modern network environments, security teams often face "visibility gaps." Traditional firewalls and antivirus software are no longer enough to stop sophisticated attacks such as lateral movement, data exfiltration, or zero-day exploits. Without a centralized system to correlate logs and analyze raw network traffic, malicious activities can remain undetected for weeks, leaving the infrastructure vulnerable.
+                    </p>
 
-                <p>Aquesta secció contindria més paràgrafs detallant processos, decisions de disseny i resultats obtinguts.</p>
+                    <h2>The Implementation (Solution)</h2>
+                    <p>
+                        To address these challenges, I implemented a robust monitoring node using <strong>Security Onion</strong>. The solution was built upon three main pillars:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Network Visibility & Capture:</strong> I configured a dedicated sensor to monitor network traffic via a SPAN port (Mirror Port). Using <strong>Zeek</strong> (formerly Bro), the system generates rich metadata for every connection, allowing for deep protocol analysis of HTTP, DNS, and SSL traffic.
+                        </li>
+                        <li>
+                            <strong>Intrusion Detection (IDS):</strong> I integrated <strong>Suricata</strong> as a signature-based detection engine. This allows the platform to automatically flag known malicious patterns, such as command-and-control (C2) communications or unauthorized port scanning.
+                        </li>
+                        <li>
+                            <strong>Log Management and Analysis (ELK Stack):</strong> All security events are indexed into the <strong>Elasticsearch, Logstash, and Kibana (ELK)</strong> stack. I developed custom dashboards in Kibana to visualize real-time alerts, enabling a proactive "Threat Hunting" approach rather than just reacting to incidents.
+                        </li>
+                        <li>
+                            <strong>Host Security:</strong> Beyond network monitoring, I deployed <strong>Wazuh</strong> agents on critical endpoints to monitor file integrity and system calls, correlating host-level events with network-level anomalies.
+                        </li>
+                    </ul>
+
+                    <h2>Key Results</h2>
+                    <p>
+                        The final deployment provides a 360-degree view of the network security posture. It successfully reduced the Mean Time to Detect (MTTD) by providing immediate alerts on suspicious behavior, ensuring that any unauthorized access or data leakage is identified and mitigated in real-time.
+                    </p>
+                </section>
             </section>
         </article>
     </main>

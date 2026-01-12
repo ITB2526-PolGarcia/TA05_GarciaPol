@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Detalls del Projecte 1: E-commerce amb disseny responsive i desenvolupament frontend.">
+    <meta name="description" content="Detalls del Projecte 1">
     <meta name="author" content="Pol García López">
-    <title>Portfoli Personal - Projecte 1: E-commerce</title>
+    <title>Portfoli Personal</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -35,33 +35,62 @@
                 <h1>Project 2</h1>
 
                 <div class="main-image-container">
-                    <img src="img/proyecto2.png" alt="Vista principal del projecte E-commerce" class="main-project-image">
+                    <img src="img/incidencias.png" alt="Vista principal del projecte E-commerce" class="main-project-image">
                 </div>
             </section>
 
             <section class="project-intro-details">
                 <div class="intro-text">
                     <h2>Introduction</h2>
-                    <p>RESUMEN DEL PROYECTO</p>
+                    <p>"In the field of IT administration, data is only as valuable as the efficiency with which it is stored, processed, and accessed. This project, titled 'Cross-Platform IT Incident Management & Data ETL Pipeline,' was developed to address the real-world challenge of transitioning legacy data into modern, interoperable formats. The core objective was to design a complete data lifecycle for managing organizational IT incidents—moving from raw data collection to structured storage and intelligent analysis.
+
+As part of the Programming and Markup Languages (TA04) module, this project demonstrates a deep understanding of data sustainability and accessibility. It involved the creation of a robust data pipeline that migrates information through four critical stages: CSV (raw capture), XML (hierarchical structuring), Python (algorithmic processing), and JSON (dynamic storage). Beyond the technical implementation, the project emphasizes 'Data Cleansing'—filtering out anomalies and future-dated entries—to transform raw data into meaningful business intelligence. This system ensures that IT departments can track equipment failures and maintenance trends using open standards, fulfilling the requirements for long-term digital preservation and professional data governance."</p>
                 </div>
 
                 <div class="details-box">
                     <h3>Main Details</h3>
                     <ul>
-                        <li>NOMBRE</li>
-                        <li>FECHA</li>
-                        <li>TECNOLOGIAS</li>
-                        <li>HABILIDADES CLAVE</li>
+                        <li>Incident Resolution</li>
+                        <li>2025 November</li>
+                        <li>Python, XML, CSV, JSON</li>
                     </ul>
                     <a href="URL_DEMO_PROJECTE1" target="_blank" class="button project-link">View on GitHub</a>
                 </div>
             </section>
 
             <section class="project-description">
-                <h2>Problem and solution</h2>
-                <p>EXPLICACIÓN "AMPLIA" DEL PROYECTO</p>
+                <section class="project-description">
+                        <h2>The Challenge (Problem)</h2>
+                        <p>
+                            Organizations often struggle with fragmented data formats that hinder interoperability and long-term accessibility. In this scenario, IT incident reports were being collected in flat, unoptimized files (CSV), making it difficult to perform complex queries, ensure data integrity, or automate statistical reporting. Furthermore, the presence of "noisy data" (erroneous entries like future-dated incidents) required a sophisticated filtering layer to maintain the reliability of the information.
+                        </p>
 
-                <p>Aquesta secció contindria més paràgrafs detallant processos, decisions de disseny i resultats obtinguts.</p>
+                        <h2>The Implementation (Solution)</h2>
+                        <p>
+                            I developed a multi-stage data processing engine to streamline incident management:
+                        </p>
+
+                        <ul>
+                            <li>
+                                <strong>Stage 1: Structured Capture:</strong> Designed a standardized data collection form capturing 10+ critical parameters per incident, exported to a clean <strong>CSV</strong> format.
+                            </li>
+                            <li>
+                                <strong>Stage 2: XML Migration & Tree Mapping:</strong> Transformed the flat data into a hierarchical <strong>XML</strong> structure. This included creating an XML Tree Diagram to map relationships between equipment IDs, timestamps, and technician notes, ensuring the data follows open documentation standards.
+                            </li>
+                            <li>
+                                <strong>Stage 3: Python Intelligence Layer:</strong> Built a Python processing script that parses the XML data. I implemented custom logic to filter "bad data" and generate real-time statistics in the console using advanced formatting for readability.
+                            </li>
+                            <li>
+                                <strong>Stage 4: JSON Persistence:</strong> Developed a dynamic export feature to <strong>JSON</strong>. The script includes a logical check for existing files, offering users the choice between overwriting or appending new data while strictly preventing duplicate Incident IDs.
+                            </li>
+                        </ul>
+
+                        <h2>Impact & Sustainability</h2>
+                        <p>
+                            By utilizing open standards (ASCII/Unicode) and uncompressed formats, the system guarantees that security data remains accessible for years to come. This project bridges the gap between raw web-based data collection and high-level programming, providing a scalable solution for any IT department.
+                        </p>
+                    </section>
+
             </section>
         </article>
     </main>
