@@ -72,6 +72,7 @@ header nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center; /* Centrat vertical respecte al logo */
 }
 
 /* CORRECCIÓ: Espaiat del menú afegit en l'última revisió */
@@ -87,6 +88,7 @@ header nav ul li a {
     border-radius: 6px;
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
 }
 
 header nav ul li a:hover,
@@ -95,6 +97,31 @@ header nav ul li a.active {
     color: var(--card-background);
     box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
 }
+
+/* --- ESTILS AFEGITS PER ALS BOTONS D'IDIOMA --- */
+.lang-wrapper {
+    display: flex;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--text-light);
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.lang-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+/* --- FI ESTILS IDIOMA --- */
 
 /* ------------------------------------------- */
 /* Contingut Principal (<main>) */
@@ -128,7 +155,6 @@ main {
     width: 100%;
     height: auto;
     max-width: 100%;
-
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -140,7 +166,6 @@ main {
 /* Estils del botó (CTA Principal i Projectes) */
 /* ------------------------------------------- */
 
-/* CORRECCIÓ: S'ha afegit .contact-form button[type="submit"] a l'estil de botó */
 a.button,
 a.project-link,
 .contact-form button[type="submit"] {
@@ -155,13 +180,12 @@ a.project-link,
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
-    /* NOU: Assegurem que el botó d'enviament no tingui vores per defecte */
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
 }
 
-/* CORRECCIÓ: S'ha afegit .contact-form button[type="submit"]:hover */
 a.button:hover,
 a.project-link:hover,
 .contact-form button[type="submit"]:hover {
@@ -660,4 +684,66 @@ footer a:hover {
 /* Ajust del botó dins de la targeta */
 .project-card .card-link {
     margin-top: auto; /* Força el botó a la part inferior, alineant-lo amb altres targetes */
+/* ============================================================== */
+/* AJUSTES PARA MÓVILS (PANTALLAS MENORES A 768px)                */
+/* ============================================================== */
+
+@media (max-width: 768px) {
+
+    /* 1. Header: Apilamos el logo y el menú */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Menú en vertical */
+        gap: 10px;
+    }
+
+    header nav ul li {
+        margin-left: 0; /* Quitamos el margen lateral en móvil */
+    }
+
+    /* 2. Introducción: La imagen arriba y el texto abajo */
+    #introduccio {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    #introduccio .perfil-imatge {
+        flex: 0 0 auto;
+        max-width: 200px; /* Imagen más pequeña en móvil */
+        margin: 0 auto;
+    }
+
+    /* 3. Formulario de Contacto: De 2 columnas a 1 sola */
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        border-right: none;
+        border-bottom: 1px solid var(--secondary-light);
+        padding-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* 4. Detalle de Proyecto: Apilar descripción y caja de detalles */
+    .project-intro-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* 5. Galería: Las imágenes una debajo de otra */
+    .gallery-container {
+        flex-direction: column;
+    }
+
+    /* 6. Títulos más pequeños para que no corten la pantalla */
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.5rem !important; }
+}
 }
