@@ -684,100 +684,94 @@ footer a:hover {
 /* Ajust del botó dins de la targeta */
 .project-card .card-link {
     margin-top: auto; /* Força el botó a la part inferior, alineant-lo amb altres targetes */
-
-
+}
 /* ============================================================== */
-/* SOLUCIÓN DEFINITIVA PARA MÓVIL (Sustituye todo lo anterior)    */
+/* RESET RESPONSIVE RADICAL (Elimina el scroll lateral)           */
 /* ============================================================== */
 
-/* 1. Bloqueo total de desbordamiento */
+/* 1. Bloqueo de seguridad en los contenedores raíz */
 html, body {
-    overflow-x: hidden;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important; /* Corta cualquier cosa que sobresalga */
     margin: 0;
     padding: 0;
-    position: relative;
 }
 
-/* 2. Asegurar que Main no tenga márgenes que sumen ancho */
-main {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 10px !important;
-    margin: 0 auto !important;
+/* 2. Forzar que TODO respete el ancho de la pantalla */
+* {
     box-sizing: border-box !important;
 }
 
-/* 3. REGLAS PARA MÓVIL (iPhone, Redmi, etc. < 768px) */
+/* 3. CONFIGURACIÓN PARA MÓVILES (iPhone, Redmi, etc.) */
 @media (max-width: 768px) {
 
-    /* Reset de Flexbox para evitar que se mantengan en fila */
-    header,
-    #introduccio,
-    .contact-container,
-    .project-intro-details,
-    .gallery-container,
-    .footer-content {
+    /* Ajuste de contenedores principales */
+    main, section, .contact-container, #introduccio, .project-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 20px !important; /* Reducimos el espacio exagerado de 50px */
+        gap: 20px !important; /* Bajamos el gap de 50px a 20px */
     }
 
-    /* Imagen de perfil: El principal problema */
+    /* HEADER: El menú suele ser el culpable */
+    header {
+        flex-direction: column !important;
+        padding: 15px !important;
+        width: 100% !important;
+    }
+
+    header nav ul {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    header nav ul li {
+        margin: 5px 0 !important;
+    }
+
+    /* IMAGEN DE PERFIL: Forzamos que se encoja */
     #introduccio .perfil-imatge {
-        flex: none !important;
-        width: 180px !important; /* Forzamos tamaño pequeño */
-        height: 180px !important;
+        flex: 0 0 auto !important;
+        width: 160px !important; /* Tamaño fijo pequeño para móvil vertical */
+        height: 160px !important;
+        max-width: 100% !important;
         margin: 0 auto !important;
     }
 
     #introduccio .introduccio-text {
         width: 100% !important;
+        text-align: center !important;
     }
 
-    /* Quitar bordes laterales que empujan el contenido */
-    .contact-info {
-        border-right: none !important;
-        border-bottom: 1px solid var(--secondary-light);
-        padding-right: 0 !important;
-        width: 100% !important;
-    }
-
-    /* Forzar que las tarjetas de proyectos ocupen todo el ancho disponible */
+    /* FORMULARIO Y PROYECTOS: Una sola columna sin fallos */
     .project-grid {
-        display: block !important; /* Cambiamos de Grid a bloque para evitar errores de cálculo */
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .project-card, .projecte {
         width: 100% !important;
         margin-bottom: 20px !important;
-        box-sizing: border-box !important;
     }
 
-    /* Ajuste del Header para que no se amontone */
-    header nav ul {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    .contact-info {
+        border-right: none !important;
+        border-bottom: 1px solid var(--secondary-light);
+        padding: 0 0 20px 0 !important;
+        width: 100% !important;
     }
 
-    header nav ul li {
-        margin: 0 !important;
-    }
-
-    /* Ajuste de fuentes para evitar que palabras largas corten la pantalla */
-    h1 { font-size: 1.7rem !important; overflow-wrap: break-word; }
-    h2 { font-size: 1.4rem !important; }
-}
-
-/* Ajuste extra para tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .project-grid {
-        grid-template-columns: 1fr 1fr !important;
-    }
-    #introduccio {
-        gap: 20px !important;
+    /* Evitar que textos largos (como nombres de archivos o emails) empujen la web */
+    h1, h2, p, a {
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
     }
 }
