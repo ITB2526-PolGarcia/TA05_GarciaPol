@@ -1,7 +1,3 @@
-This is a professional and complete **README.md** tailored to your specific files and your profile as a **Cyber Admin**. You can copy and paste this directly into your GitHub repository.
-
----
-
 # Professional Portfolio | Pol García López 🛡️
 
 Welcome to my personal portfolio repository. This project showcases my work as a **Cyber Admin**, featuring a collection of cybersecurity and web development projects. The site is designed with a "Premium Dark Mode" aesthetic, prioritizing professional clarity and modern UI/UX.
@@ -86,5 +82,3 @@ Simply open `index.html` in your preferred web browser.
 © 2026 Pol García López. All rights reserved.
 
 ---
-
-### Would you like me to help you set up **GitHub Pages** so your portfolio is visible online to everyone?
