@@ -746,4 +746,23 @@ footer a:hover {
     h1 { font-size: 2rem !important; }
     h2 { font-size: 1.5rem !important; }
 }
+/* ============================================================== */
+/* AJUSTES PARA TABLETS (ENTRE 769px Y 1024px)                    */
+/* ============================================================== */
+
+@media (max-width: 1024px) {
+    /* En tablets, la intro ya empieza a verse apretada, bajamos el tamaño de la imagen */
+    #introduccio {
+        gap: 30px;
+    }
+
+    #introduccio .perfil-imatge {
+        flex: 0 0 200px; /* Reducimos la foto un poco */
+    }
+
+    /* Las tarjetas de proyectos pasarán a ser de 2 en 2 en lugar de 3 */
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 }
