@@ -687,12 +687,15 @@ footer a:hover {
 
 
 /* ============================================================== */
-/* PROTECCIÓN GLOBAL RESPONSIVE                                   */
+/* PROTECCIÓN GLOBAL Y RESPONSIVE DEFINITIVO                      */
 /* ============================================================== */
 
+/* 1. Bloqueo de desplazamiento lateral */
 html, body {
     max-width: 100%;
-    overflow-x: hidden; /* Evita que la web se desplace hacia los lados */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -701,98 +704,75 @@ img {
     display: block;
 }
 
-/* ============================================================== */
-/* 1. AJUSTES PARA TABLETS (De 769px a 1024px)                    */
-/* ============================================================== */
-
+/* 2. AJUSTE PARA TABLETS (Pantallas medianas) */
 @media (max-width: 1024px) {
     #introduccio {
         gap: 20px;
         padding: var(--spacing-md);
     }
-
     #introduccio .perfil-imatge {
-        flex: 0 0 200px;
+        flex: 0 0 180px;
     }
-
     .project-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* ============================================================== */
-/* 2. AJUSTES PARA MÓVIL (iPhone 15, Redmi, etc. - Menos de 768px) */
-/* ============================================================== */
+/* 3. AJUSTE PARA MÓVIL VERTICAL (iPhone, Redmi, etc. - El más importante) */
+@media (max-width: 480px) {
 
-@media (max-width: 768px) {
+    /* Forzamos a que nada sea más ancho que la pantalla */
+    main, section, header, footer, .contact-container, #introduccio {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box;
+    }
 
-    /* Header: Logo arriba, menú abajo */
+    /* Menú vertical y centrado */
     header {
         flex-direction: column;
-        padding: 1rem;
-        gap: 15px;
+        padding: 15px !important;
     }
 
     header nav ul {
         flex-direction: column;
-        width: 100%;
-        gap: 5px;
+        gap: 10px;
+        padding: 0;
     }
 
-    header nav ul li {
-        margin: 0;
-        width: 100%;
-    }
-
-    header nav ul li a {
-        display: block;
-        text-align: center;
-        padding: 12px; /* Área de toque más grande para dedos */
-    }
-
-    /* Introducción: Todo en una columna */
+    /* La foto de perfil más pequeña para que no empuje el texto */
     #introduccio {
-        flex-direction: column;
-        text-align: center;
-        margin-top: 1rem;
+        flex-direction: column !important;
+        padding: 20px !important;
+        gap: 15px !important;
     }
 
     #introduccio .perfil-imatge {
-        max-width: 180px;
-        margin: 0 auto 20px;
+        max-width: 150px !important; /* Más pequeña para vertical */
+        margin: 0 auto;
     }
 
-    /* Listado de Proyectos: 1 sola columna */
+    /* Proyectos en una sola columna sin márgenes que sobresalgan */
     .project-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        padding: 10px !important;
     }
 
-    /* Formulario de Contacto: Apilado */
+    /* Formulario de contacto */
     .contact-container {
-        flex-direction: column;
-        padding: 15px;
+        flex-direction: column !important;
+        padding: 15px !important;
     }
 
     .contact-info {
-        border-right: none;
+        border-right: none !important;
         border-bottom: 1px solid var(--secondary-light);
-        padding-bottom: 20px;
         margin-bottom: 20px;
+        padding-bottom: 20px;
     }
 
-    /* Detalles de Proyecto (páginas individuales) */
-    .project-intro-details {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .gallery-container {
-        flex-direction: column;
-    }
-
-    /* Ajuste de fuentes para que no se corten */
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.4rem !important; }
-    .section-title { font-size: 1.6rem !important; }
-}
+    /* Evitar que los títulos grandes rompan el ancho */
+    h1 { font-size: 1.6rem !important; overflow-wrap: break-word; }
+    h2 { font-size: 1.3rem !important; }
 }
